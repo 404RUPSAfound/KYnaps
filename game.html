@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Games - Kynapse Kids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="game.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Cosmic Background -->
+        <div class="cosmic-bg">
+            <div class="nebula nebula-1"></div>
+            <div class="nebula nebula-2"></div>
+            <div class="nebula nebula-3"></div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">Kynapse Kids</div>
+            </div>
+            <nav class="nav-links">
+                <a href="KYNAPSE.HTML" class="nav-link">Home</a>
+                <a href="class.html" class="nav-link">Classes</a>
+                <a href="game.html" class="nav-link active">Games</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+                <a href="parentsdashboard.html" class="nav-link">Parents</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-login">Logout</button>
+            </div>
+        </header>
+
+        <!-- Games Page Content -->
+        <div class="games-page">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Educational Games</h1>
+                <div class="search-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search games...">
+                    </div>
+                    <select class="filter-dropdown">
+                        <option>All Classes</option>
+                        <option>Class 1</option>
+                        <option>Class 2</option>
+                        <option>Class 3</option>
+                        <option>Class 4</option>
+                        <option>Class 5</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Games Filter -->
+            <div class="games-filter">
+                <div class="filter-option active">All Games</div>
+                <div class="filter-option">Mathematics</div>
+                <div class="filter-option">Science</div>
+                <div class="filter-option">Language</div>
+                <div class="filter-option">Logic</div>
+                <div class="filter-option">Recently Played</div>
+                <div class="filter-option">Popular</div>
+            </div>
+
+            <!-- Featured Games -->
+            <div class="featured-games">
+                <h2 class="section-title">Featured Games</h2>
+                <div class="featured-carousel">
+                    <div class="featured-card">
+                        <div class="featured-thumbnail">🔢</div>
+                        <div class="featured-content">
+                            <h3 class="game-title">Number Valley Run</h3>
+                            <p class="game-desc">Jump on blocks with correct numbers in sequence. Practice counting and number recognition.</p>
+                            <div class="game-meta">
+                                <span class="game-subject">Mathematics</span>
+                                <span class="game-class">Class 1-2</span>
+                            </div>
+                            <button class="btn-play"><i class="fas fa-play"><a href="numbervally run.html"> Play Now</a></i></button>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-thumbnail">🪐</div>
+                        <div class="featured-content">
+                            <h3 class="game-title">Space Jet Run</h3>
+                            <p class="game-desc">Navigate through the solar system while learning about planets and their characteristics.</p>
+                            <div class="game-meta">
+                                <span class="game-subject">Science</span>
+                                <span class="game-class">Class 4-5</span>
+                            </div>
+                            <button class="btn-play"><i class="fas fa-play"></i> Play Now</button>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-thumbnail">🍕</div>
+                        <div class="featured-content">
+                            <h3 class="game-title">Pizza Slice City</h3>
+                            <p class="game-desc">Learn fractions by collecting pizza slices and completing whole pizzas.</p>
+                            <div class="game-meta">
+                                <span class="game-subject">Mathematics</span>
+                                <span class="game-class">Class 3-4</span>
+                            </div>
+                            <button class="btn-play"><i class="fas fa-play"></i> Play Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="categories">
+                <h2 class="section-title">Game Categories</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🔢</div>
+                        <h3 class="category-title">Mathematics</h3>
+                        <div class="category-count">24 Games</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🧪</div>
+                        <h3 class="category-title">Science</h3>
+                        <div class="category-count">18 Games</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">📚</div>
+                        <h3 class="category-title">Language</h3>
+                        <div class="category-count">16 Games</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🧩</div>
+                        <h3 class="category-title">Logic & Reasoning</h3>
+                        <div class="category-count">12 Games</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Games Grid -->
+            <h2 class="section-title">All Games</h2>
+            <div class="games-grid">
+                <!-- Game 1 -->
+                <div class="game-card">
+                    <div class="game-thumbnail">🔢</div>
+                    <div class="game-badge">New</div>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i> 4.8
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Number Valley Run</h3>
+                        <p class="game-desc">Jump on blocks with correct numbers in sequence. Class 1 Maths.</p>
+                        <div class="game-meta">
+                            <span class="game-subject">Mathematics</span>
+                            <span class="game-class">Class 1</span>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+                            <button class="btn-info"><i class="fas fa-info"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 2 -->
+                <div class="game-card">
+                    <div class="game-thumbnail">➗</div>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i> 4.7
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Dragon Compare Bridge</h3>
+                        <p class="game-desc">Build bridges by comparing numbers with >, <, =. Class 1 Maths.</p>
+                        <div class="game-meta">
+                            <span class="game-subject">Mathematics</span>
+                            <span class="game-class">Class 1</span>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+                            <button class="btn-info"><i class="fas fa-info"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 3 -->
+                <div class="game-card">
+                    <div class="game-thumbnail">🍕</div>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i> 4.9
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Pizza Slice City</h3>
+                        <p class="game-desc">Collect fraction slices to complete pizzas. Class 3 Maths.</p>
+                        <div class="game-meta">
+                            <span class="game-subject">Mathematics</span>
+                            <span class="game-class">Class 3</span>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+                            <button class="btn-info"><i class="fas fa-info"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 4 -->
+                <div class="game-card">
+                    <div class="game-thumbnail">🪐</div>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i> 4.8
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Space Jet Run</h3>
+                        <p class="game-desc">Jump between planet orbits while learning about solar system. Class 5 Science.</p>
+                        <div class="game-meta">
+                            <span class="game-subject">Science</span>
+                            <span class="game-class">Class 5</span>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+                            <button class="btn-info"><i class="fas fa-info"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 5 -->
+                <div class="game-card">
+                    <div class="game-thumbnail">⚡</div>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i> 4.6
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Wire Runner</h3>
+                        <p class="game-desc">Connect circuit paths to complete electrical circuits. Class 5 Science.</p>
+                        <div class="game-meta">
+                            <span class="game-subject">Science</span>
+                            <span class="game-class">Class 5</span>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+                            <button class="btn-info"><i class="fas fa-info"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 6 -->
+                <div class="game-card">
+                    <div class="game-thumbnail">🌱</div>
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i> 4.7
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Seed Runner</h3>
+                        <p class="game-desc">Help plants grow by providing the right conditions. Class 3 Science.</p>
+                        <div class="game-meta">
+                            <span class="game-subject">Science</span>
+                            <span class="game-class">Class 3</span>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+                            <button class="btn-info"><i class="fas fa-info"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kynapse Kids</h3>
+                    <p>Transforming education through gamified learning experiences for classes 1-7.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Parents Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i>kynapsekids@gmail.com</li>
+                        <li><i class="fas fa-phone"></i>+918514953842</li>
+                        <li><i class="fas fa-map-marker-alt"></i>SVIET,Chandigrah,India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kynapse Kids. All rights reserved. | Learn. Play. Grow Smart.</p>
+            </div>
+        </footer>
+
+        <!-- Game Detail Modal -->
+        <div class="modal" id="gameModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Number Valley Run</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-game-details">
+                    <div class="modal-thumbnail">🔢</div>
+                    <div class="modal-info">
+                        <h3>About This Game</h3>
+                        <p>Number Valley Run is an exciting math adventure where players jump on blocks with correct numbers in sequence. This game helps children practice counting, number recognition, and sequencing skills in a fun, interactive way.</p>
+                        <div class="modal-stats">
+                            <div class="stat">
+                                <div class="stat-value">4.8</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">1,254</div>
+                                <div class="stat-label">Plays</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">15 min</div>
+                                <div class="stat-label">Avg. Play Time</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">92%</div>
+                                <div class="stat-label">Completion Rate</div>
+                            </div>
+                        </div>
+                        <div class="game-meta">
+                            <span class="game-subject">Mathematics</span>
+                            <span class="game-class">Class 1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-play" style="flex: 1;"><i class="fas fa-play"></i> Play Game</button>
+                    <button class="btn-info" style="width: auto; padding: 0 1.5rem;"><i class="fas fa-share"></i> Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+
+</body>
+</html>

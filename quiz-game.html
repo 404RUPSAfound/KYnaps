@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game - Kynapse Kids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="kynapse.css">
+    <link rel="stylesheet" href="quiz-game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Cosmic Background -->
+        <div class="cosmic-bg">
+            <div class="nebula nebula-1"></div>
+            <div class="nebula nebula-2"></div>
+            <div class="nebula nebula-3"></div>
+        </div>
+
+        <!-- Game Header -->
+        <div class="quiz-game-header">
+            <div class="game-info">
+                <div class="info-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Class: <span id="gameClass">1</span></span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-book"></i>
+                    <span>Subject: <span id="gameSubject">Math</span></span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-flag"></i>
+                    <span>Level: <span id="gameLevel">1</span></span>
+                </div>
+            </div>
+
+            <div class="game-stats">
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <span>Score: <span id="currentScore">0</span></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-redo"></i>
+                    <span>Tries: <span id="triesLeft">3</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Container -->
+        <div class="quiz-game-container">
+            <!-- Left Side: Progress & Timer -->
+            <div class="game-sidebar">
+                <!-- Progress Dots -->
+                <div class="progress-section">
+                    <h3>Progress</h3>
+                    <div class="progress-dots" id="progressDots">
+                        <!-- Dots will be added by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Timer -->
+                <div class="timer-section">
+                    <h3>Time Left</h3>
+                    <div class="timer-circle">
+                        <svg class="timer-svg" width="120" height="120">
+                            <circle class="timer-bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="timer-progress" cx="60" cy="60" r="54"></circle>
+                        </svg>
+                        <div class="timer-text">
+                            <span id="timerValue">30</span>s
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hint Indicator -->
+                <div class="hint-section">
+                    <h3>Hint System</h3>
+                    <div class="hint-bubbles">
+                        <div class="hint-bubble active"></div>
+                        <div class="hint-bubble"></div>
+                        <div class="hint-bubble"></div>
+                    </div>
+                    <p>Wrong answers trigger voice hints</p>
+                </div>
+            </div>
+
+            <!-- Center: Game Area -->
+            <div class="game-main-area">
+                <!-- Question Display -->
+                <div class="question-display">
+                    <div class="question-header">
+                        <div class="question-number">
+                            Question <span id="questionNumber">1</span>/<span id="totalQuestions">10</span>
+                        </div>
+                    </div>
+
+                    <div class="question-content">
+                        <h2 class="question-text" id="questionText">
+                            What is 5 + 3?
+                        </h2>
+
+                        <div class="question-visual" id="questionVisual">
+                            <!-- Visual elements will be added here -->
+                        </div>
+                    </div>
+
+                    <!-- Voice Feedback -->
+                    <div class="voice-feedback" id="voiceFeedback">
+                        <div class="feedback-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="feedback-text" id="feedbackText">
+                            Think carefully and choose your answer!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div class="options-grid" id="optionsGrid">
+                    <!-- Options will be added by JavaScript -->
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-skip" id="skipBtn">
+                        <i class="fas fa-forward"></i> Skip Question
+                    </button>
+                    <button class="btn-submit" id="submitBtn" disabled>
+                        <i class="fas fa-paper-plane"></i> Submit Answer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: Game Info -->
+            <div class="game-info-sidebar">
+                <!-- Level Rules -->
+                <div class="rules-section">
+                    <h3>Level Rules</h3>
+                    <ul class="rules-list">
+                        <li><i class="fas fa-check-circle"></i> 3 tries per question</li>
+                        <li><i class="fas fa-check-circle"></i> Wrong answer → Voice hint</li>
+                        <li><i class="fas fa-check-circle"></i> Complete all questions</li>
+                        <li><i class="fas fa-check-circle"></i> Unlock next level</li>
+                    </ul>
+                </div>
+
+                <!-- Current Status -->
+                <div class="status-section">
+                    <h3>Current Status</h3>
+                    <div class="status-item">
+                        <span>Correct Answers:</span>
+                        <span id="correctCount">0</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Questions Left:</span>
+                        <span id="questionsLeft">10</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Level Progress:</span>
+                        <span id="levelProgress">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div class="game-over-modal" id="gameOverModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h2>Level Complete! 🎉</h2>
+                    <p id="completionMessage">You've completed Level 1!</p>
+                </div>
+
+                <div class="modal-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="finalScore">0</div>
+                        <div class="stat-label">Final Score</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="finalCorrect">0</div>
+                        <div class="stat-label">Correct Answers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="finalTime">0s</div>
+                        <div class="stat-label">Time Taken</div>
+                    </div>
+                </div>
+
+                <div class="modal-message" id="levelUnlockMessage">
+                    <i class="fas fa-lock-open"></i>
+                    <span>Level 2 is now unlocked! 🚀</span>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-play-again" id="playAgainBtn">
+                        <i class="fas fa-redo"></i> Play Again
+                    </button>
+                    <button class="btn-next-level" id="nextLevelBtn">
+                        <i class="fas fa-arrow-right"></i> Next Level
+                    </button>
+                    <button class="btn-back-home" id="backHomeBtn">
+                        <i class="fas fa-home"></i> Back to Quiz Home
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sound Controls -->
+        <div class="sound-controls">
+            <button class="btn-sound" id="soundToggle">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <div class="volume-slider">
+                <input type="range" id="volumeSlider" min="0" max="100" value="70">
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="correctSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrongSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hintSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-cartoon-wooden-whistle-567.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="timeUpSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-warning-alarm-buzzer-1251.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="levelUpSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="quiz-game.js"></script>
+</body>
+
+</html>

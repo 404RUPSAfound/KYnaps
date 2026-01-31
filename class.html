@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes - Kynapse Kids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="class.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Cosmic Background -->
+        <div class="cosmic-bg">
+            <div class="nebula nebula-1"></div>
+            <div class="nebula nebula-2"></div>
+            <div class="nebula nebula-3"></div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">Kynapse Kids</div>
+            </div>
+            <nav class="nav-links">
+                <a href="KYNAPSE.HTML" class="nav-link">Home</a>
+                <a href="class.html" class="nav-link active">Classes</a>
+                <a href="game.html" class="nav-link">Games</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+                <a href="parentsdashboard.html" class="nav-link">Parents</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-login">Logout</button>
+            </div>
+        </header>
+
+        <!-- Classes Page Content -->
+        <div class="classes-page">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Classes & Curriculum</h1>
+                <div class="student-selector">
+                    <div class="student-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="student-info">
+                        <h3>Aarav Sharma</h3>
+                        <p>Class 3 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class Navigation -->
+            <div class="class-navigation">
+                <div class="class-tab active" data-class="1">
+                    <div class="class-icon">1️⃣</div>
+                    <div class="class-name">Class 1</div>
+                </div>
+                <div class="class-tab" data-class="2">
+                    <div class="class-icon">2️⃣</div>
+                    <div class="class-name">Class 2</div>
+                </div>
+                <div class="class-tab" data-class="3">
+                    <div class="class-icon">3️⃣</div>
+                    <div class="class-name">Class 3</div>
+                </div>
+                <div class="class-tab" data-class="4">
+                    <div class="class-icon">4️⃣</div>
+                    <div class="class-name">Class 4</div>
+                </div>
+                <div class="class-tab" data-class="5">
+                    <div class="class-icon">5️⃣</div>
+                    <div class="class-name">Class 5</div>
+                </div>
+                <div class="class-tab" data-class="6">
+                    <div class="class-icon">6️⃣</div>
+                    <div class="class-name">Class 6</div>
+                </div>
+                <div class="class-tab" data-class="7">
+                    <div class="class-icon">7️⃣</div>
+                    <div class="class-name">Class 7</div>
+                </div>
+            </div>
+
+            <!-- Class 3 Content (Active by default) -->
+            <div class="class-content active" id="class-3">
+                <div class="class-header">
+                    <h2 class="class-title">Class 3 Curriculum</h2>
+                    <div class="class-progress">
+                        <div class="progress-circle">
+                            <div class="progress-text">75%</div>
+                        </div>
+                        <div class="progress-info">
+                            <h3>Overall Progress</h3>
+                            <p>18 of 24 topics completed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subjects Grid -->
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3 class="subject-title"><i class="fas fa-calculator subject-icon"></i> Mathematics</h3>
+                            <div class="subject-progress">82%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 82%"></div>
+                        </div>
+                        <div class="subject-stats">
+                            <span>Last played: Today</span>
+                            <span>Games: 8/10</span>
+                        </div>
+                        <div class="subject-actions">
+                            <button class="btn-explore"><i class="fas fa-gamepad"></i> Explore Games</button>
+                            <button class="btn-view"><i class="fas fa-book-open"></i></button>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3 class="subject-title"><i class="fas fa-flask subject-icon"></i> Science</h3>
+                            <div class="subject-progress">65%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <div class="subject-stats">
+                            <span>Last played: 2 days ago</span>
+                            <span>Games: 6/9</span>
+                        </div>
+                        <div class="subject-actions">
+                            <button class="btn-explore"><i class="fas fa-gamepad"></i> Explore Games</button>
+                            <button class="btn-view"><i class="fas fa-book-open"></i></button>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3 class="subject-title"><i class="fas fa-book subject-icon"></i> English</h3>
+                            <div class="subject-progress">78%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                        <div class="subject-stats">
+                            <span>Last played: Yesterday</span>
+                            <span>Games: 7/8</span>
+                        </div>
+                        <div class="subject-actions">
+                            <button class="btn-explore"><i class="fas fa-gamepad"></i> Explore Games</button>
+                            <button class="btn-view"><i class="fas fa-book-open"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapters Section -->
+                <div class="chapters-section">
+                    <h2 class="section-title">Mathematics Chapters</h2>
+                    <div class="chapters-grid">
+                        <div class="chapter-card">
+                            <div class="chapter-header">
+                                <h3 class="chapter-name">Numbers & Counting</h3>
+                                <span class="chapter-status status-completed">Completed</span>
+                            </div>
+                            <p class="chapter-desc">Learn to count from 1 to 1000 and understand place values.</p>
+                            <div class="chapter-meta">
+                                <span>3 Games</span>
+                                <span>45 min</span>
+                            </div>
+                        </div>
+                        <div class="chapter-card">
+                            <div class="chapter-header">
+                                <h3 class="chapter-name">Addition & Subtraction</h3>
+                                <span class="chapter-status status-completed">Completed</span>
+                            </div>
+                            <p class="chapter-desc">Master addition and subtraction of 3-digit numbers.</p>
+                            <div class="chapter-meta">
+                                <span>4 Games</span>
+                                <span>60 min</span>
+                            </div>
+                        </div>
+                        <div class="chapter-card">
+                            <div class="chapter-header">
+                                <h3 class="chapter-name">Multiplication</h3>
+                                <span class="chapter-status status-in-progress">In Progress</span>
+                            </div>
+                            <p class="chapter-desc">Learn multiplication tables and simple multiplication problems.</p>
+                            <div class="chapter-meta">
+                                <span>2 Games</span>
+                                <span>30 min</span>
+                            </div>
+                        </div>
+                        <div class="chapter-card">
+                            <div class="chapter-header">
+                                <h3 class="chapter-name">Division</h3>
+                                <span class="chapter-status status-not-started">Not Started</span>
+                            </div>
+                            <p class="chapter-desc">Introduction to division with remainders and word problems.</p>
+                            <div class="chapter-meta">
+                                <span>3 Games</span>
+                                <span>45 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Section -->
+                <div class="resources-section">
+                    <h2 class="section-title">Learning Resources</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <div class="resource-icon">📚</div>
+                            <h3 class="resource-title">Worksheets</h3>
+                            <p class="resource-desc">Printable practice sheets for all subjects</p>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon">🎬</div>
+                            <h3 class="resource-title">Video Lessons</h3>
+                            <p class="resource-desc">Animated explanations of concepts</p>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon">🧩</div>
+                            <h3 class="resource-title">Practice Tests</h3>
+                            <p class="resource-desc">Chapter-wise assessment tests</p>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon">📱</div>
+                            <h3 class="resource-title">Parent Resources</h3>
+                            <p class="resource-desc">Guides for supporting your child's learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 4 Content (Hidden by default) -->
+            <div class="class-content" id="class-4">
+                <div class="class-header">
+                    <h2 class="class-title">Class 4 Curriculum</h2>
+                    <div class="class-progress">
+                        <div class="progress-circle">
+                            <div class="progress-text">60%</div>
+                        </div>
+                        <div class="progress-info">
+                            <h3>Overall Progress</h3>
+                            <p>15 of 25 topics completed</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Similar structure as Class 3 would go here -->
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3 class="subject-title"><i class="fas fa-calculator subject-icon"></i> Mathematics</h3>
+                            <div class="subject-progress">70%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                        <div class="subject-stats">
+                            <span>Last played: 3 days ago</span>
+                            <span>Games: 7/10</span>
+                        </div>
+                        <div class="subject-actions">
+                            <button class="btn-explore"><i class="fas fa-gamepad"></i> Explore Games</button>
+                            <button class="btn-view"><i class="fas fa-book-open"></i></button>
+                        </div>
+                    </div>
+                    <!-- More subjects would go here -->
+                </div>
+                <div class="chapters-section">
+                    <h2 class="section-title">Coming Soon</h2>
+                    <p>Class 4 content will be available soon. Stay tuned!</p>
+                </div>
+            </div>
+
+            <!-- Other class content would follow similar pattern -->
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kynapse Kids</h3>
+                    <p>Transforming education through gamified learning experiences for classes 1-7.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Parents Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i>kynapsekids@gmail.com</li>
+                        <li><i class="fas fa-phone"></i>+918514953842</li>
+                        <li><i class="fas fa-map-marker-alt"></i>SVIET,Chandigrah,India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kynapse Kids. All rights reserved. | Learn. Play. Grow Smart.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="class.js"></script>
+
+</body>
+</html>

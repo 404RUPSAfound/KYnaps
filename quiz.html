@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Fun Quiz - Kynapse Kids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-container">
+            <div class="character-animation">
+                <div class="character">
+                    <div class="character-head">
+                        <div class="character-eyes">
+                            <div class="eye"></div>
+                            <div class="eye"></div>
+                        </div>
+                        <div class="character-mouth"></div>
+                    </div>
+                    <div class="character-body"></div>
+                </div>
+            </div>
+
+            <div class="welcome-content">
+                <h1 class="welcome-title">Math Adventure Time! 🚀</h1>
+                <p class="welcome-subtitle">Join our fun quiz and become a Math Superhero!</p>
+
+                <div class="countdown-box">
+                    <div class="countdown-circle">
+                        <div class="countdown-number" id="countdownNumber">3</div>
+                    </div>
+                    <p class="countdown-text">Starting in <span id="countdownText">3</span> seconds...</p>
+                </div>
+
+                <div class="instructions">
+                    <div class="instruction-item">
+                        <i class="fas fa-clock"></i>
+                        <span>30 seconds per question</span>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-volume-up"></i>
+                        <span>Listen to fun voices!</span>
+                    </div>
+                    <div class="instruction-item">
+                        <i class="fas fa-star"></i>
+                        <span>Earn stars for correct answers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div class="game-screen" id="gameScreen" style="display: none;">
+        <!-- Header -->
+        <div class="game-header">
+            <div class="header-left">
+                <div class="level-indicator">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Level <span id="currentLevel">1</span></span>
+                </div>
+                <div class="score-display">
+                    <i class="fas fa-star"></i>
+                    <span>Score: <span id="currentScore">0</span></span>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <div class="progress-indicator">
+                    <div class="progress-dots" id="progressDots"></div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <div class="timer-progress"></div>
+                        <div class="timer-text">
+                            <span id="timerValue">30</span>s
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Area -->
+        <div class="game-main">
+            <!-- Question Area -->
+            <div class="question-area">
+                <div class="question-number">
+                    <span>Q<span id="questionNumber">1</span></span>
+                </div>
+
+                <div class="question-content">
+                    <h2 class="question-text" id="questionText">What is 5 + 3?</h2>
+
+                    <div class="question-visual" id="questionVisual">
+                        <div class="visual-item">5️⃣</div>
+                        <div class="visual-item">➕</div>
+                        <div class="visual-item">3️⃣</div>
+                        <div class="visual-item">🤔</div>
+                    </div>
+                </div>
+
+                <div class="character-feedback" id="characterFeedback">
+                    <div class="feedback-bubble">
+                        <p>Think carefully and choose your answer!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Options Area -->
+            <div class="options-area">
+                <div class="options-grid" id="optionsGrid">
+                    <!-- Options will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Action Area -->
+            <div class="action-area">
+                <div class="hint-indicator">
+                    <div class="hint-bubbles">
+                        <div class="hint-bubble active"></div>
+                        <div class="hint-bubble"></div>
+                        <div class="hint-bubble"></div>
+                    </div>
+                    <span>Hints will help you if needed!</span>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-skip" id="skipBtn">
+                        <i class="fas fa-forward"></i> Skip
+                    </button>
+                    <button class="btn-submit" id="submitBtn" disabled>
+                        <i class="fas fa-paper-plane"></i> Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Character -->
+        <div class="floating-character" id="floatingCharacter">
+            <div class="floating-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="floating-speech" id="floatingSpeech">
+                Let's solve this! 🎮
+            </div>
+        </div>
+
+        <!-- Sound Controls -->
+        <div class="sound-controls">
+            <button class="btn-sound" id="soundToggle">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <div class="volume-slider">
+                <input type="range" id="volumeSlider" min="0" max="100" value="70">
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Screen -->
+    <div class="result-screen" id="resultScreen" style="display: none;">
+        <div class="result-container">
+            <!-- Celebration Animation -->
+            <div class="celebration-animation">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+            </div>
+
+            <div class="result-header">
+                <div class="result-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h1 class="result-title">Amazing! You Did It! 🎉</h1>
+                <p class="result-subtitle">Here's how you performed:</p>
+            </div>
+
+            <div class="result-stats">
+                <div class="stat-card correct">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="correctAnswers">0</div>
+                        <div class="stat-label">Correct Answers</div>
+                    </div>
+                </div>
+
+                <div class="stat-card time">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="totalTime">0s</div>
+                        <div class="stat-label">Total Time</div>
+                    </div>
+                </div>
+
+                <div class="stat-card score">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="finalScore">0</div>
+                        <div class="stat-label">Total Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="performance-meter">
+                <h3>Your Performance</h3>
+                <div class="meter-container">
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="meterFill"></div>
+                    </div>
+                    <div class="meter-text" id="meterText">Great Job! 🎯</div>
+                </div>
+            </div>
+
+            <div class="reward-badges">
+                <h3>Rewards Earned</h3>
+                <div class="badges-container">
+                    <div class="badge">
+                        <div class="badge-icon">🏆</div>
+                        <div class="badge-label">Quiz Master</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">🧠</div>
+                        <div class="badge-label">Math Genius</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">⚡</div>
+                        <div class="badge-label">Quick Thinker</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button class="btn-play-again" id="playAgainBtn">
+                    <i class="fas fa-redo"></i> Play Again
+                </button>
+                <button class="btn-home" id="homeBtn">
+                    <i class="fas fa-home"></i> Back to Home
+                </button>
+            </div>
+
+            <div class="encouragement-box">
+                <i class="fas fa-heart"></i>
+                <p>Every question makes you smarter! Keep learning and having fun! 🚀</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="bgMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="correctSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrongSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hintSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-cartoon-wooden-whistle-567.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="levelUpSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="quiz.js"></script>
+</body>
+
+</html>

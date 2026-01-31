@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracking - Kynapse Kids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="progress.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Cosmic Background -->
+        <div class="cosmic-bg">
+            <div class="nebula nebula-1"></div>
+            <div class="nebula nebula-2"></div>
+            <div class="nebula nebula-3"></div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">Kynapse Kids</div>
+            </div>
+            <nav class="nav-links">
+                <a href="KYNAPSE.HTML" class="nav-link">Home</a>
+                <a href="class.html" class="nav-link">Classes</a>
+                <a href="game.html" class="nav-link">Games</a>
+                <a href="progress.html" class="nav-link active">Progress</a>
+                <a href="parentsdashboard.html" class="nav-link">Parents</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-login">Logout</button>
+            </div>
+        </header>
+
+        <!-- Progress Page Content -->
+        <div class="progress-page">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Learning Progress</h1>
+                <div class="student-selector">
+                    <div class="student-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="student-info">
+                        <h3>Aarav Sharma</h3>
+                        <p>Class 3 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Overview -->
+            <div class="progress-overview">
+                <div class="overview-card">
+                    <div class="overview-header">
+                        <h3 class="overview-title">Overall Progress</h3>
+                        <div class="overview-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="overview-value">74%</div>
+                    <div class="overview-label">Across all subjects</div>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-header">
+                        <h3 class="overview-title">Games Completed</h3>
+                        <div class="overview-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                    </div>
+                    <div class="overview-value">18</div>
+                    <div class="overview-label">Out of 25 total</div>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-header">
+                        <h3 class="overview-title">Learning Streak</h3>
+                        <div class="overview-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                    </div>
+                    <div class="overview-value">7 days</div>
+                    <div class="overview-label">Keep it up!</div>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-header">
+                        <h3 class="overview-title">Time Spent</h3>
+                        <div class="overview-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="overview-value">4.2h</div>
+                    <div class="overview-label">This week</div>
+                </div>
+            </div>
+
+            <!-- Progress Charts -->
+            <div class="progress-charts">
+                <div class="chart-container">
+                    <h2 class="chart-title">Weekly Progress</h2>
+                    <div class="chart">
+                        <div class="chart-bar" style="height: 60%">
+                            <div class="chart-value">60%</div>
+                            <div class="chart-label">Mon</div>
+                        </div>
+                        <div class="chart-bar" style="height: 75%">
+                            <div class="chart-value">75%</div>
+                            <div class="chart-label">Tue</div>
+                        </div>
+                        <div class="chart-bar" style="height: 45%">
+                            <div class="chart-value">45%</div>
+                            <div class="chart-label">Wed</div>
+                        </div>
+                        <div class="chart-bar" style="height: 80%">
+                            <div class="chart-value">80%</div>
+                            <div class="chart-label">Thu</div>
+                        </div>
+                        <div class="chart-bar" style="height: 90%">
+                            <div class="chart-value">90%</div>
+                            <div class="chart-label">Fri</div>
+                        </div>
+                        <div class="chart-bar" style="height: 65%">
+                            <div class="chart-value">65%</div>
+                            <div class="chart-label">Sat</div>
+                        </div>
+                        <div class="chart-bar" style="height: 50%">
+                            <div class="chart-value">50%</div>
+                            <div class="chart-label">Sun</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h2 class="chart-title">Skill Distribution</h2>
+                    <div class="chart">
+                        <div class="chart-bar" style="height: 85%">
+                            <div class="chart-value">85%</div>
+                            <div class="chart-label">Math</div>
+                        </div>
+                        <div class="chart-bar" style="height: 70%">
+                            <div class="chart-value">70%</div>
+                            <div class="chart-label">Science</div>
+                        </div>
+                        <div class="chart-bar" style="height: 65%">
+                            <div class="chart-value">65%</div>
+                            <div class="chart-label">Language</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject Progress -->
+            <div class="subject-progress">
+                <h2 class="chart-title">Subject Progress</h2>
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3 class="subject-name"><i class="fas fa-calculator"></i> Mathematics</h3>
+                            <div class="subject-percentage">78%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span>Last played: 2 days ago</span>
+                            <span>Games: 8/12</span>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3 class="subject-name"><i class="fas fa-flask"></i> Science</h3>
+                            <div class="subject-percentage">65%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span>Last played: 1 day ago</span>
+                            <span>Games: 6/10</span>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3 class="subject-name"><i class="fas fa-book"></i> Language</h3>
+                            <div class="subject-percentage">82%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 82%"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span>Last played: Today</span>
+                            <span>Games: 9/11</span>
+                        </div>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3 class="subject-name"><i class="fas fa-puzzle-piece"></i> Logic & Reasoning</h3>
+                            <div class="subject-percentage">71%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 71%"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span>Last played: 3 days ago</span>
+                            <span>Games: 7/9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Performance -->
+            <div class="game-performance">
+                <h2 class="chart-title">Game Performance</h2>
+                <table class="performance-table">
+                    <thead>
+                        <tr>
+                            <th>Game</th>
+                            <th>Subject</th>
+                            <th>Last Played</th>
+                            <th>Score</th>
+                            <th>Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="game-name">
+                                    <div class="game-icon">🔢</div>
+                                    <div>Number Valley Run</div>
+                                </div>
+                            </td>
+                            <td>Mathematics</td>
+                            <td>Today</td>
+                            <td>92%</td>
+                            <td><span class="performance-badge badge-excellent">Excellent</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="game-name">
+                                    <div class="game-icon">➗</div>
+                                    <div>Dragon Compare Bridge</div>
+                                </div>
+                            </td>
+                            <td>Mathematics</td>
+                            <td>2 days ago</td>
+                            <td>78%</td>
+                            <td><span class="performance-badge badge-good">Good</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="game-name">
+                                    <div class="game-icon">🍕</div>
+                                    <div>Pizza Slice City</div>
+                                </div>
+                            </td>
+                            <td>Mathematics</td>
+                            <td>3 days ago</td>
+                            <td>82%</td>
+                            <td><span class="performance-badge badge-good">Good</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="game-name">
+                                    <div class="game-icon">🪐</div>
+                                    <div>Space Jet Run</div>
+                                </div>
+                            </td>
+                            <td>Science</td>
+                            <td>1 day ago</td>
+                            <td>88%</td>
+                            <td><span class="performance-badge badge-excellent">Excellent</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="game-name">
+                                    <div class="game-icon">⚡</div>
+                                    <div>Wire Runner</div>
+                                </div>
+                            </td>
+                            <td>Science</td>
+                            <td>4 days ago</td>
+                            <td>65%</td>
+                            <td><span class="performance-badge badge-average">Average</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Achievements -->
+            <div class="achievements">
+                <h2 class="chart-title">Recent Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h3 class="achievement-title">Math Master</h3>
+                        <p class="achievement-desc">Completed all Class 3 math games</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⭐</div>
+                        <h3 class="achievement-title">Perfect Score</h3>
+                        <p class="achievement-desc">Got 100% in Number Valley Run</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🔥</div>
+                        <h3 class="achievement-title">7-Day Streak</h3>
+                        <p class="achievement-desc">Played learning games for 7 consecutive days</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🚀</div>
+                        <h3 class="achievement-title">Fast Learner</h3>
+                        <p class="achievement-desc">Completed 5 games in one week</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kynapse Kids</h3>
+                    <p>Transforming education through gamified learning experiences for classes 1-7.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Parents Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i>kynapsekids@gmail.com</li>
+                        <li><i class="fas fa-phone"></i>+918514953842</li>
+                        <li><i class="fas fa-map-marker-alt"></i>SVIET,Chandigrah,India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kynapse Kids. All rights reserved. | Learn. Play. Grow Smart.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="progress.js"></script>
+
+</body>
+</html>

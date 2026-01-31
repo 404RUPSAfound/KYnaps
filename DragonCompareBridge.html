@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Compare Bridge - Class 1 Maths</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #1a237e, #4a148c);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .game-container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            margin-top: 20px;
+        }
+        
+        .game-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .game-title {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            text-shadow: 3px 3px 0 #ff5722, 5px 5px 0 rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+        
+        .game-subtitle {
+            font-size: 1.2rem;
+            color: #b2ebf2;
+            margin-bottom: 20px;
+        }
+        
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .game-canvas-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(to bottom, #64b5f6, #bbdefb);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 5px solid #ff9800;
+        }
+        
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .game-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        .score-display {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .score-box {
+            background: #ff5722;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 0 #d84315;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .control-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #388e3c;
+            transition: all 0.2s;
+        }
+        
+        .control-btn:hover {
+            background: #66bb6a;
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #388e3c;
+        }
+        
+        .control-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        
+        .operator-selection {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .operator-btn {
+            width: 70px;
+            height: 70px;
+            background: #ffcc00;
+            border: none;
+            border-radius: 50%;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #ff9800;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .operator-btn:hover {
+            background: #ffd740;
+            transform: translateY(3px);
+            box-shadow: 0 3px 0 #ff9800;
+        }
+        
+        .operator-btn:active {
+            transform: translateY(6px);
+            box-shadow: none;
+        }
+        
+        .game-instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .instructions-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .instructions-list {
+            padding-left: 20px;
+        }
+        
+        .instructions-list li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .dragon-character {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,40 Q50,20 70,40 Q80,50 70,60 Q50,80 30,60 Q20,50 30,40" fill="%23ff5722"/><circle cx="40" cy="40" r="5" fill="white"/><circle cx="60" cy="40" r="5" fill="white"/><circle cx="40" cy="40" r="2" fill="black"/><circle cx="60" cy="40" r="2" fill="black"/><path d="M45,60 Q50,65 55,60" stroke="black" stroke-width="2" fill="none"/></svg>');
+            background-size: contain;
+            z-index: 10;
+        }
+        
+        .bridge-piece {
+            position: absolute;
+            height: 20px;
+            background: #8d6e63;
+            border-top: 3px solid #5d4037;
+            z-index: 5;
+        }
+        
+        .number-platform {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            background: #4caf50;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 0 #388e3c;
+            z-index: 5;
+        }
+        
+        .game-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-align: center;
+            z-index: 100;
+            display: none;
+        }
+        
+        .message-title {
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        
+        .message-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .message-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .game-title {
+                font-size: 2rem;
+            }
+            
+            .game-controls {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .operator-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1 class="game-title">Dragon Compare Bridge</h1>
+            <p class="game-subtitle">Build bridges by comparing numbers with >, <, = operators</p>
+        </div>
+        
+        <div class="game-area">
+            <div class="game-canvas-container">
+                <canvas id="gameCanvas"></canvas>
+                <div class="dragon-character" id="dragon"></div>
+                <div class="game-message" id="gameMessage">
+                    <h2 class="message-title" id="messageTitle">Level Complete!</h2>
+                    <p class="message-text" id="messageText">You built the bridge correctly!</p>
+                    <button class="message-btn" id="messageBtn">Next Level</button>
+                </div>
+            </div>
+            
+            <div class="operator-selection">
+                <button class="operator-btn" id="lessThan">&lt;</button>
+                <button class="operator-btn" id="equals">=</button>
+                <button class="operator-btn" id="greaterThan">&gt;</button>
+            </div>
+            
+            <div class="game-controls">
+                <div class="score-display">
+                    <div class="score-box">Level: <span id="level">1</span></div>
+                    <div class="score-box">Score: <span id="score">0</span></div>
+                    <div class="score-box">Lives: <span id="lives">3</span></div>
+                </div>
+                
+                <div class="controls">
+                    <button class="control-btn" id="restartBtn">Restart</button>
+                    <button class="control-btn" id="hintBtn">Hint</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-instructions">
+            <h3 class="instructions-title">How to Play:</h3>
+            <ul class="instructions-list">
+                <li>Help the dragon cross the river by building bridges with correct number comparisons</li>
+                <li>Look at the two numbers on the platforms and choose the correct comparison operator: &gt;, &lt;, or =</li>
+                <li>Correct choices build bridge pieces; wrong choices make the dragon lose a life</li>
+                <li>Complete all levels to win the game!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Game variables
+        let level = 1;
+        let score = 0;
+        let lives = 3;
+        let currentNumbers = [];
+        let correctOperator = '';
+        let bridgePieces = [];
+        let dragonPosition = { x: 50, y: 300 };
+        let gameActive = true;
+        
+        // DOM elements
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const dragonEl = document.getElementById('dragon');
+        const levelEl = document.getElementById('level');
+        const scoreEl = document.getElementById('score');
+        const livesEl = document.getElementById('lives');
+        const gameMessage = document.getElementById('gameMessage');
+        const messageTitle = document.getElementById('messageTitle');
+        const messageText = document.getElementById('messageText');
+        const messageBtn = document.getElementById('messageBtn');
+        
+        // Set canvas size
+        function setCanvasSize() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        
+        // Initialize game
+        function initGame() {
+            setCanvasSize();
+            generateLevel();
+            updateDisplay();
+            drawGame();
+        }
+        
+        // Generate level with random numbers
+        function generateLevel() {
+            currentNumbers = [];
+            bridgePieces = [];
+            
+            // Generate two random numbers based on level
+            const maxNum = 10 + (level * 5);
+            let num1 = Math.floor(Math.random() * maxNum) + 1;
+            let num2 = Math.floor(Math.random() * maxNum) + 1;
+            
+            // Ensure we have different comparison cases
+            const caseType = Math.floor(Math.random() * 3);
+            
+            switch(caseType) {
+                case 0: // num1 > num2
+                    if (num1 <= num2) num1 = num2 + 1;
+                    correctOperator = '>';
+                    break;
+                case 1: // num1 < num2
+                    if (num1 >= num2) num1 = num2 - 1;
+                    correctOperator = '<';
+                    break;
+                case 2: // num1 = num2
+                    num2 = num1;
+                    correctOperator = '=';
+                    break;
+            }
+            
+            currentNumbers = [num1, num2];
+            
+            // Reset dragon position
+            dragonPosition = { x: 50, y: 300 };
+            updateDragonPosition();
+        }
+        
+        // Draw game elements
+        function drawGame() {
+            if (!gameActive) return;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw background
+            drawBackground();
+            
+            // Draw river
+            drawRiver();
+            
+            // Draw platforms with numbers
+            drawPlatforms();
+            
+            // Draw bridge pieces
+            drawBridge();
+            
+            // Draw dragon
+            drawDragon();
+            
+            requestAnimationFrame(drawGame);
+        }
+        
+        // Draw background
+        function drawBackground() {
+            // Sky
+            ctx.fillStyle = '#87CEEB';
+            ctx.fillRect(0, 0, canvas.width, canvas.height / 2);
+            
+            // Ground
+            ctx.fillStyle = '#8BC34A';
+            ctx.fillRect(0, canvas.height / 2, canvas.width, canvas.height / 2);
+            
+            // Clouds
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(100, 80, 30, 0, Math.PI * 2);
+            ctx.arc(140, 70, 40, 0, Math.PI * 2);
+            ctx.arc(180, 80, 30, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(600, 120, 25, 0, Math.PI * 2);
+            ctx.arc(640, 110, 35, 0, Math.PI * 2);
+            ctx.arc(680, 120, 25, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        // Draw river
+        function drawRiver() {
+            ctx.fillStyle = '#2196F3';
+            ctx.fillRect(0, canvas.height / 2 + 50, canvas.width, 100);
+            
+            // River waves
+            ctx.strokeStyle = '#1976D2';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            for (let i = 0; i < canvas.width; i += 20) {
+                ctx.moveTo(i, canvas.height / 2 + 100);
+                ctx.lineTo(i + 10, canvas.height / 2 + 90);
+                ctx.lineTo(i + 20, canvas.height / 2 + 100);
+            }
+            ctx.stroke();
+        }
+        
+        // Draw platforms with numbers
+        function drawPlatforms() {
+            const platformWidth = 80;
+            const platformHeight = 40;
+            const platformY = canvas.height / 2 + 20;
+            
+            // Left platform
+            ctx.fillStyle = '#4CAF50';
+            ctx.fillRect(150, platformY, platformWidth, platformHeight);
+            ctx.strokeStyle = '#388E3C';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(150, platformY, platformWidth, platformHeight);
+            
+            // Right platform
+            ctx.fillStyle = '#4CAF50';
+            ctx.fillRect(canvas.width - 150 - platformWidth, platformY, platformWidth, platformHeight);
+            ctx.strokeStyle = '#388E3C';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(canvas.width - 150 - platformWidth, platformY, platformWidth, platformHeight);
+            
+            // Numbers
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(currentNumbers[0], 150 + platformWidth/2, platformY + platformHeight/2);
+            ctx.fillText(currentNumbers[1], canvas.width - 150 - platformWidth/2, platformY + platformHeight/2);
+            
+            // Operator placeholder
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.font = 'bold 32px Arial';
+            ctx.fillText('?', canvas.width / 2, platformY + platformHeight/2);
+        }
+        
+        // Draw bridge pieces
+        function drawBridge() {
+            ctx.fillStyle = '#8D6E63';
+            bridgePieces.forEach(piece => {
+                ctx.fillRect(piece.x, piece.y, piece.width, 20);
+                ctx.fillStyle = '#5D4037';
+                ctx.fillRect(piece.x, piece.y, piece.width, 5);
+                ctx.fillStyle = '#8D6E63';
+            });
+        }
+        
+        // Draw dragon
+        function drawDragon() {
+            // Dragon will be drawn via CSS with the dragon-character element
+            // This function is kept for potential canvas-based dragon in future
+        }
+        
+        // Update dragon position
+        function updateDragonPosition() {
+            dragonEl.style.left = `${dragonPosition.x}px`;
+            dragonEl.style.top = `${dragonPosition.y}px`;
+        }
+        
+        // Handle operator selection
+        function handleOperatorSelection(operator) {
+            if (!gameActive) return;
+            
+            if (operator === correctOperator) {
+                // Correct answer - build bridge
+                buildBridge();
+                score += 10 * level;
+                updateDisplay();
+                
+                // Check if level complete
+                if (bridgePieces.length >= 5) {
+                    levelComplete();
+                }
+            } else {
+                // Wrong answer - lose life
+                lives--;
+                updateDisplay();
+                
+                if (lives <= 0) {
+                    gameOver();
+                } else {
+                    showMessage('Oops!', 'That was not the correct operator. Try again!', 'Continue');
+                }
+            }
+        }
+        
+        // Build bridge piece
+        function buildBridge() {
+            const pieceWidth = (canvas.width - 300) / 5;
+            const pieceX = 150 + 80 + (bridgePieces.length * pieceWidth);
+            const pieceY = canvas.height / 2 + 20;
+            
+            bridgePieces.push({
+                x: pieceX,
+                y: pieceY,
+                width: pieceWidth
+            });
+            
+            // Move dragon forward
+            dragonPosition.x += pieceWidth;
+            updateDragonPosition();
+        }
+        
+        // Level complete
+        function levelComplete() {
+            gameActive = false;
+            score += 50 * level;
+            updateDisplay();
+            
+            if (level >= 5) {
+                showMessage('Congratulations!', 'You completed all levels! You are a math champion!', 'Play Again');
+            } else {
+                showMessage('Level Complete!', `Great job! You built the bridge correctly! Ready for level ${level + 1}?`, 'Next Level');
+            }
+        }
+        
+        // Game over
+        function gameOver() {
+            gameActive = false;
+            showMessage('Game Over', 'The dragon fell in the river! Better luck next time.', 'Try Again');
+        }
+        
+        // Show message
+        function showMessage(title, text, buttonText) {
+            messageTitle.textContent = title;
+            messageText.textContent = text;
+            messageBtn.textContent = buttonText;
+            gameMessage.style.display = 'block';
+        }
+        
+        // Hide message
+        function hideMessage() {
+            gameMessage.style.display = 'none';
+        }
+        
+        // Update display
+        function updateDisplay() {
+            levelEl.textContent = level;
+            scoreEl.textContent = score;
+            livesEl.textContent = lives;
+        }
+        
+        // Reset game
+        function resetGame() {
+            level = 1;
+            score = 0;
+            lives = 3;
+            gameActive = true;
+            hideMessage();
+            initGame();
+        }
+        
+        // Next level
+        function nextLevel() {
+            level++;
+            gameActive = true;
+            hideMessage();
+            initGame();
+        }
+        
+        // Provide hint
+        function provideHint() {
+            let hint = '';
+            const [num1, num2] = currentNumbers;
+            
+            if (num1 > num2) {
+                hint = `Hint: ${num1} is greater than ${num2}`;
+            } else if (num1 < num2) {
+                hint = `Hint: ${num1} is less than ${num2}`;
+            } else {
+                hint = `Hint: ${num1} is equal to ${num2}`;
+            }
+            
+            showMessage('Hint', hint, 'Got it');
+        }
+        
+        // Event listeners
+        document.getElementById('lessThan').addEventListener('click', () => handleOperatorSelection('<'));
+        document.getElementById('equals').addEventListener('click', () => handleOperatorSelection('='));
+        document.getElementById('greaterThan').addEventListener('click', () => handleOperatorSelection('>'));
+        
+        document.getElementById('restartBtn').addEventListener('click', resetGame);
+        document.getElementById('hintBtn').addEventListener('click', provideHint);
+        
+        messageBtn.addEventListener('click', () => {
+            if (level >= 5 || lives <= 0) {
+                resetGame();
+            } else {
+                nextLevel();
+            }
+        });
+        
+        // Initialize game on load
+        window.addEventListener('load', initGame);
+        window.addEventListener('resize', initGame);
+    </script>
+</body>
+</html>

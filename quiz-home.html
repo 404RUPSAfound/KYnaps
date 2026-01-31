@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Adventure - Kynapse Kids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="kynapse.css">
+    <link rel="stylesheet" href="quiz-home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Cosmic Background -->
+        <div class="cosmic-bg">
+            <div class="nebula nebula-1"></div>
+            <div class="nebula nebula-2"></div>
+            <div class="nebula nebula-3"></div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">Kynapse Kids</div>
+            </div>
+            <nav class="nav-links">
+                <a href="KYNAPSE.HTML" class="nav-link">Home</a>
+                <a href="class.html" class="nav-link">Classes</a>
+                <a href="game.html" class="nav-link">Games</a>
+                <a href="quiz-home.html" class="nav-link active">Quiz</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+                <a href="parentsdashboard.html" class="nav-link">Parents</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-login" id="loginBtn">Login</button>
+                <button class="btn btn-signup" id="signupBtn">Sign Up</button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Quiz Home Content -->
+        <section class="quiz-home">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <h1 class="welcome-title">🎮 Quiz Adventure 🚀</h1>
+                <p class="welcome-subtitle">Choose your class, subject, and level to start the learning adventure!</p>
+
+                <div class="progress-summary">
+                    <div class="progress-card">
+                        <div class="progress-icon">📊</div>
+                        <div class="progress-info">
+                            <h3>Your Progress</h3>
+                            <p>Complete levels to unlock new challenges</p>
+                        </div>
+                        <div class="progress-value" id="overallProgress">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step-by-Step Selection -->
+            <div class="selection-steps">
+                <!-- Step 1: Class Selection -->
+                <div class="step-container active" id="step1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h2>Choose Your Class</h2>
+                        <p>Select your grade level to begin</p>
+                    </div>
+
+                    <div class="class-grid" id="classGrid">
+                        <div class="class-card" data-class="1">
+                            <div class="class-icon">1️⃣</div>
+                            <div class="class-content">
+                                <h3>Class 1</h3>
+                                <p>Beginner Level</p>
+                                <div class="class-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span>0% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="class-card" data-class="2">
+                            <div class="class-icon">2️⃣</div>
+                            <div class="class-content">
+                                <h3>Class 2</h3>
+                                <p>Elementary Level</p>
+                                <div class="class-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span>0% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="class-card" data-class="3">
+                            <div class="class-icon">3️⃣</div>
+                            <div class="class-content">
+                                <h3>Class 3</h3>
+                                <p>Intermediate Level</p>
+                                <div class="class-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span>0% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="class-card" data-class="4">
+                            <div class="class-icon">4️⃣</div>
+                            <div class="class-content">
+                                <h3>Class 4</h3>
+                                <p>Advanced Level</p>
+                                <div class="class-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span>0% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-navigation">
+                        <button class="btn-next-step" id="nextToSubjects">
+                            Next: Choose Subject <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Subject Selection -->
+                <div class="step-container" id="step2">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h2>Choose Your Subject</h2>
+                        <p>Select what you want to learn</p>
+                        <button class="btn-back-step" id="backToClasses">
+                            <i class="fas fa-arrow-left"></i> Back to Classes
+                        </button>
+                    </div>
+
+                    <div class="subject-grid" id="subjectGrid">
+                        <button class="subject-card" data-subject="math">
+                            <div class="subject-icon">➗</div>
+                            <div class="subject-content">
+                                <h3>Mathematics</h3>
+                                <p>Numbers, Calculations & Logic</p>
+                                <div class="subject-status available">
+                                    <i class="fas fa-unlock"></i> Available
+                                </div>
+            
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="subject-card" data-subject="science">
+                        <button class="subject-icon">🔬</div>
+                            <div class="subject-content">
+                                <h3>Science</h3>
+                                <p>Nature & Experiments</p>
+                                <div class="subject-status coming">
+                                    <i class="fas fa-clock"></i> Coming Soon
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="subject-card" data-subject="english">
+                        <button class="subject-icon">📚</div>
+                            <div class="subject-content">
+                                <h3>English</h3>
+                                <p>Grammar & Vocabulary</p>
+                                <div class="subject-status coming">
+                                    <i class="fas fa-clock"></i> Coming Soon
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="subject-card" data-subject="gk">
+                        <button class="subject-icon">🌍</div>
+                            <div class="subject-content">
+                                <h3>General Knowledge</h3>
+                                <p>World & Facts</p>
+                                <div class="subject-status coming">
+                                    <i class="fas fa-clock"></i> Coming Soon
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    </div>
+
+                    <div class="step-navigation">
+                        <button class="btn-next-step" id="nextToLevels">
+                            Next: Choose Level <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <!-- Step 1 में -->
+                        <button class="btn-next-step" id="nextToSubjects" disabled>
+    Next: Choose Subject <i class="fas fa-arrow-right"></i>
+</button>
+
+                        <!-- Step 2 में -->
+                        <button class="btn-next-step" id="nextToLevels" disabled>
+    Next: Choose Level <i class="fas fa-arrow-right"></i>
+</button>
+
+                        <!-- Step 3 में -->
+                        <button class="btn-start-quiz" id="startQuizBtn" disabled>
+    <i class="fas fa-play"></i> Start Quiz
+</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Level Selection -->
+                <div class="step-container" id="step3">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <h2>Choose Your Level</h2>
+                        <p id="levelSelectionInfo">Complete Level 1 to unlock Level 2</p>
+                        <button class="btn-back-step" id="backToSubjects">
+                            <i class="fas fa-arrow-left"></i> Back to Subjects
+                        </button>
+                    </div>
+
+                    <div class="level-selection-container">
+                        <div class="level-info-box">
+                            <h3><i class="fas fa-info-circle"></i> How Levels Work</h3>
+                            <ul class="level-rules">
+                                <li><i class="fas fa-check-circle"></i> Complete Level 1 to unlock Level 2</li>
+                                <li><i class="fas fa-check-circle"></i> Each level has 10 questions</li>
+                                <li><i class="fas fa-check-circle"></i> Get 3 tries per question</li>
+                                <li><i class="fas fa-check-circle"></i> Voice hints will help you learn</li>
+                            </ul>
+                        </div>
+
+                        <div class="level-grid" id="levelGrid">
+                            <!-- Levels will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="step-navigation">
+                        <button class="btn-start-quiz" id="startQuizBtn">
+                            <i class="fas fa-play"></i> Start Quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                <div class="activity-list" id="activityList">
+                    <div class="activity-item">
+                        <div class="activity-icon">📚</div>
+                        <div class="activity-content">
+                            <p>Start your first quiz adventure!</p>
+                            <span class="activity-time">Just now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kynapse Kids</h3>
+                    <p>Transforming education through gamified learning experiences for classes 1-7.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="KYNAPSE.HTML">Home</a></li>
+                        <li><a href="class.html">Classes</a></li>
+                        <li><a href="game.html">Games</a></li>
+                        <li><a href="quiz-home.html">Quiz</a></li>
+                        <li><a href="parentsdashboard.html">Parents Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Classes</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Class 1</a></li>
+                        <li><a href="#">Class 2</a></li>
+                        <li><a href="#">Class 3</a></li>
+                        <li><a href="#">Class 4</a></li>
+                        <li><a href="#">Class 5-7</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i>kynapsekids@gmail.com</li>
+                        <li><i class="fas fa-phone"></i>+918514953842</li>
+                        <li><i class="fas fa-map-marker-alt"></i>SViEt,Chandigrah,India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kynapse Kids. All rights reserved. | Learn. Play. Grow Smart.</p>
+            </div>
+        </footer>
+
+        <!-- AI Chatbot -->
+        <div class="chatbot-container">
+            <button class="chatbot-toggle" id="chatbotToggle">
+                <i class="fas fa-robot"></i>
+            </button>
+            <div class="chatbot-window" id="chatbotWindow">
+                <div class="chatbot-header">
+                    <div class="chatbot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chatbot-info">
+                        <h3>Kyno</h3>
+                        <p>Your AI Learning Buddy</p>
+                    </div>
+                    <button class="chatbot-close" id="chatbotClose">&times;</button>
+                </div>
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <div class="message message-bot">
+                        Hi there! I'm Kyno, your AI learning buddy! 🤖<br><br> I can help you with:<br> • Choosing the right quiz level<br> • Explaining concepts<br> • Giving you hints during quiz<br><br> What would you like to learn today?
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" id="chatbotInput" placeholder="Ask me about quiz levels...">
+                    <button class="chatbot-send" id="chatbotSend">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="kynapse.js"></script>
+    <script src="quiz-home.js"></script>
+</body>
+
+</html>

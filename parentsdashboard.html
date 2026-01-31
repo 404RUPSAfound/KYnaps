@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents Dashboard - Kynapse Kids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="parentsdashboard.css">
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cosmic Background -->
+        <div class="cosmic-bg">
+            <div class="nebula nebula-1"></div>
+            <div class="nebula nebula-2"></div>
+            <div class="nebula nebula-3"></div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">Kynapse Kids</div>
+            </div>
+            <nav class="nav-links">
+                <a href="KYNAPSE.HTML" class="nav-link">Home</a>
+                <a href="class.html" class="nav-link">Classes</a>
+                <a href="game.html" class="nav-link">Games</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+                <a href="parentsdashboard.html" class="nav-link active">Parents</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-login">Logout</button>
+            </div>
+        </header>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h2 class="sidebar-title"><i class="fas fa-user-circle"></i> Parent Dashboard</h2>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link active">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Progress Tracking</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Game Performance</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fas fa-trophy"></i>
+                            <span>Achievements</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Help & Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="dashboard-header">
+                    <h1 class="dashboard-title">Parent Dashboard</h1>
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <h3>Priya Sharma</h3>
+                            <p>Parent of Aarav (Class 3)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Widgets -->
+                <div class="dashboard-widgets">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Total Play Time</h3>
+                            <div class="widget-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div class="widget-value">4.2h</div>
+                        <div class="widget-label">This Week</div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Games Completed</h3>
+                            <div class="widget-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                        </div>
+                        <div class="widget-value">18</div>
+                        <div class="widget-label">This Month</div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Skills Improved</h3>
+                            <div class="widget-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="widget-value">12</div>
+                        <div class="widget-label">Since Last Month</div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">Current Streak</h3>
+                            <div class="widget-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                        </div>
+                        <div class="widget-value">7 days</div>
+                        <div class="widget-label">Keep it up!</div>
+                    </div>
+                </div>
+
+                <!-- Progress Section -->
+                <div class="progress-section">
+                    <h2 class="section-title">Learning Progress</h2>
+                    <div class="progress-grid">
+                        <div class="progress-card">
+                            <div class="progress-header">
+                                <h3 class="progress-subject">Mathematics</h3>
+                                <div class="progress-percentage">78%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Last played: 2 days ago</span>
+                                <span>Games: 8/12</span>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-header">
+                                <h3 class="progress-subject">Science</h3>
+                                <div class="progress-percentage">65%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Last played: 1 day ago</span>
+                                <span>Games: 6/10</span>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-header">
+                                <h3 class="progress-subject">Language</h3>
+                                <div class="progress-percentage">82%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 82%"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Last played: Today</span>
+                                <span>Games: 9/11</span>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-header">
+                                <h3 class="progress-subject">Logic & Reasoning</h3>
+                                <div class="progress-percentage">71%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 71%"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Last played: 3 days ago</span>
+                                <span>Games: 7/9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <h2 class="section-title">Recent Activity</h2>
+                    <ul class="activity-list">
+                        <li class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Completed Number Valley Run</h4>
+                                <p>Aarav completed the game with 92% accuracy</p>
+                            </div>
+                            <div class="activity-time">2 hours ago</div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Earned Math Master Badge</h4>
+                                <p>Completed all Class 3 math games</p>
+                            </div>
+                            <div class="activity-time">1 day ago</div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Improved in Fractions</h4>
+                                <p>Score increased from 65% to 82% in Pizza Slice City</p>
+                            </div>
+                            <div class="activity-time">2 days ago</div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Asked Kyno for Help</h4>
+                                <p>Requested explanation of multiplication concepts</p>
+                            </div>
+                            <div class="activity-time">3 days ago</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kynapse Kids</h3>
+                    <p>Transforming education through gamified learning experiences for classes 1-7.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Parents Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> hello@kynapsekids.com</li>
+                        <li><i class="fas fa-phone"></i>+918514953842</li>
+                        <li><i class="fas fa-map-marker-alt"></i>SVIET,Chandigrah,India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kynapse Kids. All rights reserved. | Learn. Play. Grow Smart.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="parentsdashboard.js"></script>
+</body>
+</html>
